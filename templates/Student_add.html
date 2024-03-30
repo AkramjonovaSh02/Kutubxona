@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student qoshish</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <label>Ism: </label>
+        <input type="text" name="ism">
+        <br>
+        <label>Guruh: </label>
+        <input type="text" name="guruh">
+        <br>
+        <label>Kurs: </label>
+        <input type="number" name="kurs">
+        <br>
+        <label>Kitob soni: </label>
+        <input type="text" name="kitob_soni">
+        <br>
+    </form>
+</body>
+</html>

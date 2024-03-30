@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kitoblar</title>
+</head>
+<body>
+<h2>Kitoblar</h2>
+<hr>
+<form method="post">
+    {% csrf_token %}
+    <label>Talaba:</label>
+        <select name="talaba">
+        {% for talaba in talabalar%}
+        <option value="{{ talaba.id }}">{{talaba.ism}}</option>
+        {% endfor%}
+        </select>
+    <label>Kitob:</label>
+        <select name="kitob">
+        {% for kitob in kitoblar%}
+        <option value="{{ kitob.id }}">{{kitob.nom}}</option>
+        {% endfor%}
+        </select>
+    <label>Kutubxonachi:</label>
+        <select name="kutubxonachi">
+        {% for kutubxonachi in kutubxonachilar%}
+        <option value="{{ kutubxonachi.id }}">{{kutubxonachi.ism}}</option>
+        {% endfor%}
+        </select>
+    <label>Olingan sana:</label>
+    <input type="date" name="olingan_sana">
+    <label>Qaytarish sana:</label>
+    <input type="date" name="qaytarish_sana">
+    <button>Qo'shish</button>
+</form>
+<hr>
+{% for record in recordlar%}
+    <p>{{forloop.counter}}.{{record.talaba}}</p>
+{%endfor%}
+</body>
+</html>
